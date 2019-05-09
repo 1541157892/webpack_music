@@ -1,0 +1,208 @@
+$baseColor: rgb(232, 60, 60);
+
+@import './mixin.scss';
+@keyframes rotate {
+    to {
+        transform: rotateZ(0deg);
+    }
+    from {
+        transform: rotateZ(360deg);
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    width: 960px;
+}
+
+// 歌曲信息
+.info-section {
+    width: 100%;
+    @include clearF;
+    .info-section-cover {
+        float: left;
+        padding: 50px 75px;
+    }
+    .cover-img-wrapper {
+        display: inline-block;
+        padding: 45px;
+        border: 8px solid rgba(255, 255, 255, .9);
+        border-radius: 50%;
+        background: rgb(65, 65, 65);
+    }
+    .cover-img {
+        width: 205px;
+        height: 205px;
+        border: 5px solid rgb(30, 30, 30);
+        border-radius: 50%;
+        animation: rotate 25s linear reverse infinite;
+        animation-play-state: paused;
+    }
+    .info-section-cotent {
+        float: left;
+        padding: 30px;
+        .content-song {
+            font-size: 24px;
+        }
+        .full-content {
+            margin-top: 10px;
+            font-size: 14px;
+            div {
+                display: inline-block;
+                a {
+                    color: rgb(59, 107, 180);
+                }
+            }
+            .content-album {
+                margin-right: 70px;
+            }
+        }
+    }
+}
+
+// 歌曲控制器
+.control-music-section {
+    width: 100%;
+    border: 1px solid #eee;
+    @include clearF;
+    .control-btn {
+        padding: 6px 5px;
+        float: left;
+        button {
+            margin: 0 15px;
+            padding: 16px;
+            border-radius: 50%;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-size: 24px;
+            background-position-y: center;
+            background-color: $baseColor;
+            &.btn-prev {
+                background-image: url('../img/prev.png');
+                background-position-x: 4px;
+            }
+            &.btn-play {
+                padding: 18px;
+                background-position-x: 6px;
+                background-image: url('../img/play.png');
+            }
+            &.btn-pause {
+                background-image: url('../img/pause.png');
+            }
+            &.btn-next {
+                background-position-x: 5px;
+                background-image: url('../img/next.png');
+            }
+        }
+    } // 音乐进度
+    .music-progress {
+        float: left;
+        display: flex;
+        padding: 16px 0px;
+        width: 450px;
+        &>div {
+            font-size: 12px;
+        }
+        div.cur-time,
+        div.all-time {
+            margin: 0 12px;
+        }
+        div.music-bar {
+            overflow: hidden;
+            position: relative;
+            padding: 6px 0;
+            flex: 1;
+            &>div {
+                position: absolute;
+                width: 100%;
+                height: 4px;
+                border-radius: 4px;
+                &.bar-bottom {
+                    background-color: #eee;
+                }
+                &.bar-top {
+                    transition: left .1s linear;
+                    left: -97%;
+                    background-color: $baseColor;
+                }
+            }
+            .bar-top-dot {
+                position: absolute;
+                top: -4px;
+                right: -2px;
+                border-radius: 50%;
+            }
+            .bar-top-dot::before {
+                @include afterCircle;
+                cursor: pointer;
+            }
+        }
+        & {
+            @include clearF;
+        }
+    } // 声音调节
+    .volume-progress {
+        overflow: hidden;
+        display: flex;
+        float: left;
+        padding: 17px 0px;
+        a {
+            display: inline-block;
+            width: 18px;
+            height: 14px;
+            background-image: url("../img/volume.png");
+            background-repeat: no-repeat;
+            background-size: 70%;
+            background-position: center;
+        }
+        .volume-bar {
+            position: relative;
+            overflow: hidden;
+            padding: 4px 0;
+            width: 104px;
+            height: 5px;
+            &>div {
+                position: absolute;
+                height: 5px;
+                border-radius: 4px;
+            }
+            .bar-bottom {
+                width: 100%;
+                background-color: #eee;
+            }
+            .bar-top {
+                left: 0%;
+                width: 100px;
+                background: $baseColor;
+                .bar-top-dot {
+                    position: absolute;
+                    top: -3.5px;
+                    right: -4px;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+                .bar-top-dot::after {
+                    @include afterCircle;
+                }
+            }
+        }
+    }
+}

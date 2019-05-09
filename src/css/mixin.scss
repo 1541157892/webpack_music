@@ -1,0 +1,24 @@
+@mixin clearF {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin backgroundImg($url) {
+    background-image: $url;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin afterCircle {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border: 4px solid #eee;
+    border-radius: 50%;
+    background-color: $baseColor;
+}
