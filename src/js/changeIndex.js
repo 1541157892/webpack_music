@@ -1,12 +1,11 @@
 class ChangeIndex {
     constructor(len) {
         this.index = 0;
-        this.len = len;
+        this.len = 4;
     }
     getIndex(num) {
         // 获取当前 index
         this.index = (num + this.len + this.index) % this.len;
-        window.index = this.index;
         return this.index;
     }
     prev() {
@@ -19,4 +18,4 @@ class ChangeIndex {
     }
 }
 
-export default ChangeIndex;
+export default new ChangeIndex;

@@ -4,31 +4,31 @@
         "album": "W.BOWEN",
         "singer": "王博文",
         "time": "352",
-        "img": "./assets/song/我想你永远不会知道.png",
-        "url": "./assets/audios/我想你永远不会知道.mp3"
+        "img": "/assets/song/我想你永远不会知道.png",
+        "url": "/assets/audios/我想你永远不会知道.mp3"
     },
     {
         "song": "互删",
         "album": "互删",
         "singer": "Cristian李浩宇",
         "time": "261",
-        "img": "./assets/song/互删.png",
-        "url": "./assets/audios/互删.mp3"
+        "img": "/assets/song/互删.png",
+        "url": "/assets/audios/互删.mp3"
     },
     {
         "song": "有没有",
         "album": "果核音乐",
         "singer": "祺媛吖",
         "time": "234",
-        "img": "./assets/song/互删.png",
-        "url": "./assets/audios/有没有.mp3"
+        "img": "/assets/song/互删.png",
+        "url": "/assets/audios/有没有.mp3"
     },
     {
         "song": "买你",
         "album": "买你",
         "singer": "纳豆",
         "time": "224",
-        "img": "./assets/song/买你.png",
-        "url": "./assets/audios/买你.mp3"
+        "img": "/assets/song/买你.png",
+        "url": "/assets/audios/买你.mp3"
     }
 ]

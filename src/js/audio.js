@@ -3,11 +3,11 @@ class AudioControl {
         this.data = data;
         this.status = 'pause';
         this.audio = new Audio();
-        this.time = this.data[index].time;
+        this.time = this.data[changeIndex.index].time;
     }
     getAudio() {
         // 获取音频文件
-        this.audio.src = this.data[index].url;
+        this.audio.src = this.data[changeIndex.index].url;
         this.audio.oncanplay = () => {
             if (this.status == 'play') this.audio.play();
         }

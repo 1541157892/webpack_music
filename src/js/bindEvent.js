@@ -106,7 +106,7 @@ let proOptions = {
             // 不能让移动和按下之间距离的百分占比低于 0 或大于 97
             Options.proStopPercent = Options.proStopPercent > -Options.proMaxPercent ? -Options.proMaxPercent : Options.proStopPercent < 0 ? 0 : Options.proStopPercent;
             audioControl.changeTime(Options.proStopPercent);
-            progress.start(index, Options.proStopPercent);
+            progress.start(changeIndex.index, Options.proStopPercent);
             // 松开鼠标，将 document 上绑定的 mousemove mouseup 全部取消
             document.removeEventListener('mousemove', Options.proMoveRes);
             document.removeEventListener('mouseup', Options.proUpRes);
@@ -152,7 +152,7 @@ class BindEvent {
             coverImg.style.animationPlayState = 'running';
             this.classList.add('btn-pause');
             audioControl.play();
-            progress.start(index, proOptions.proStopPercent);
+            progress.start(changeIndex.index, proOptions.proStopPercent);
         }
     }
     nextClick() {
@@ -161,7 +161,7 @@ class BindEvent {
         render.init(changeIndex.next());
         audioControl.getAudio();
         progress.resetPlayTime()
-        progress.start(index);
+        progress.start(changeIndex.index);
     }
     prevClick() {
         // 播放上一首
@@ -169,7 +169,7 @@ class BindEvent {
         render.init(changeIndex.prev());
         audioControl.getAudio();
         progress.resetPlayTime()
-        progress.start(index);
+        progress.start(changeIndex.index);
     }
 }
 
